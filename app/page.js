@@ -5,6 +5,7 @@ import ListProducts from '@/components/products/ListProducts';
 import queryString from 'query-string';
 
 
+
 const getProducts = async(searchParams)=>{
   // const {data} = await axios.get(`${process.env.API_URL}/api/products`)
   // return data

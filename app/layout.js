@@ -2,9 +2,18 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 
 import MuiNavbar from '@/components/layouts/Navbar/Navbar';
-import  GlobalProvider from "@/app/GlobalProvider"
+import  {GlobalProvider} from "@/app/GlobalProvider"
 import { CartProvider } from '@/context/CartContext';
 import { AuthProvider } from '@/context/AuthContext';
+
+// import {newsProvider} from "@/context/NewsContext"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,14 +25,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    
-      <body className={inter.className}>
+    <head/>
+    <body className={inter.className}>
+   
+      <ToastContainer position='bottom-right'/>
+
       <AuthProvider>
       <CartProvider>
       <MuiNavbar/>
       {children}
       </CartProvider>
-      </AuthProvider>
+  </AuthProvider>
+
+     
+
       </body>
     </html>
   )
